@@ -1,0 +1,23 @@
+<div class="">
+  <img src="assets/images/puzzle-{{number}}.jpg" title="which shape is next">
+
+
+  <div class="clue" (click)="clickClue()">CLUE</div>
+  <div class="clueValue" *ngIf="clueClicked">{{clue}}</div>
+
+  <div class="checkAnswer" (click)="togglecheckAnswerExapnsion()">ANSWER</div>
+
+  <div *ngIf="checkAnswerExapnded">
+    <input class="answerInput" type="text" pattern="\d*" maxlength="2" #numberInput>
+    <button class="answerCheck" (click)="checkAnswer(numberInput.value)" type="submit">Check</button>
+
+    <div class="answerResult" *ngIf="isAnswerCorrect === true">Well done!</div>
+    <div class="answerResult" *ngIf="isAnswerCorrect === false">Not quite.</div>
+
+  </div>
+
+</div>
+
+<!-- clue
+number
+answer -->

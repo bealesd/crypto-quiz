@@ -1,0 +1,55 @@
+
+img{ 
+}
+
+.clue{
+    font-size: 20px;
+    font-family: 'Space Mono';
+    margin-top:10px;
+}
+
+.clueValue{
+    font-size: 18px;
+    font-family: 'Space Mono';
+    margin-top:5px;
+}
+
+.checkAnswer{
+    font-size: 20px;
+    font-family: 'Space Mono';
+    margin-top:10px;
+}
+
+.answerInput{
+    width:50px;
+    font-family: 'Space Mono';
+    font-size:20px;
+    margin-top:10px;
+}
+
+.answerCheck{
+    margin-left: 10px;
+}
+
+.answerResult{
+    display: inline;
+    margin-left: 10px;
+}
+
+button {
+    color: white;
+    padding: 2px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Space Mono';
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #1fb123;
+    border: 1px solid darkgreen;
+}
+
+button:hover {
+    background-color: darkgreen;
+    border: 1px solid #1fb123;
+}
