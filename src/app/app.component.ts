@@ -6,7 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  userName: string;
+  idValid: boolean = false;
   title = 'crypto-quiz';
+  uuid = '08a034f7-6e13-49eb-857e-5442367a2429';
+  validIds = {
+    'U2FsdGVkX1+3BwUvnwdcApe+Cz28FrHKXTPyxlBVvrQ=': 'Bill Beales',
+    'U2FsdGVkX19lH/iaRfkPf51IvVYsFKUXzkyPZcj37Do=': 'Alan Sully'
+  };
   array = [
     {
       number: 1,
@@ -15,13 +22,13 @@ export class AppComponent {
     },
     {
       number: 2,
-      clue: 'Count the sides',
-      answer: 4
+      clue: 'Count all the balls, including those you can\'t see',
+      answer: 30
     },
     {
       number: 3,
-      clue: 'Count the sides',
-      answer: 4
+      clue: 'Add the number to K to make a type of animal.',
+      answer: 9
     },
     {
       number: 4,
@@ -64,5 +71,24 @@ export class AppComponent {
       answer: 4
     }
   ];
+
+  constructor() { }
+
+  createKey(password: string) {
+    return (<any>window).CryptoJS.AES.encrypt(password, this.uuid).toString();
+  }
+
+  checkId(id: string) {
+    Object.keys(this.validIds).forEach((encryptedId) => {
+      let value = (<any>window).CryptoJS.AES.decrypt(encryptedId, this.uuid).toString((<any>window).CryptoJS.enc.Utf8);
+      if (value === id) {
+        this.userName = this.validIds[encryptedId];
+        this.idValid = true;
+      }
+    });
+
+    if (this.idValid === false)
+      alert('Invalid id.');
+  }
 
 }

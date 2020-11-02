@@ -1,6 +1,10 @@
-<div class="">
-  <img src="assets/images/puzzle-{{number}}.jpg" title="which shape is next">
+<div class="questionNumber" (click)="clickQuestion()">
+  PUZZLE {{number}}
+</div>
 
+<div class="questionContainer" *ngIf="questionExpanded">
+
+  <img src="assets/images/puzzle-{{number}}.jpg" title="which shape is next">
 
   <div class="clue" (click)="clickClue()">CLUE</div>
   <div class="clueValue" *ngIf="clueClicked">{{clue}}</div>
@@ -17,7 +21,3 @@
   </div>
 
 </div>
-
-<!-- clue
-number
-answer -->

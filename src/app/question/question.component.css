@@ -1,28 +1,40 @@
+.questionNumber{
+    font-size: 30px;
+    font-family: var(--font-family);
+    margin-top:10px;
+    width: var(--question-container-width);
+}
+
+.questionContainer{
+    width: calc(var(--question-container-width));
+}
 
 img{ 
+    max-width:100%;
+    max-height:100%;
 }
 
 .clue{
     font-size: 20px;
-    font-family: 'Space Mono';
+    font-family: var(--font-family);
     margin-top:10px;
 }
 
 .clueValue{
     font-size: 18px;
-    font-family: 'Space Mono';
+    font-family: var(--font-family);
     margin-top:5px;
 }
 
 .checkAnswer{
     font-size: 20px;
-    font-family: 'Space Mono';
+    font-family: var(--font-family);
     margin-top:10px;
 }
 
 .answerInput{
     width:50px;
-    font-family: 'Space Mono';
+    font-family: var(--font-family);
     font-size:20px;
     margin-top:10px;
 }
@@ -42,7 +54,7 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-family: 'Space Mono';
+    font-family: var(--font-family);
     font-size: 20px;
     cursor: pointer;
     background-color: #1fb123;

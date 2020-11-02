@@ -11,6 +11,7 @@ export class QuestionComponent implements OnInit {
   @Input() number: number;
   @Input() answer: number;
 
+  questionExpanded: boolean = false;
   isAnswerCorrect: boolean | null = null;
   clueClicked: boolean = false;
   checkAnswerExapnded: boolean = false;
@@ -29,6 +30,10 @@ export class QuestionComponent implements OnInit {
       this.isAnswerCorrect = false;
     else
       this.isAnswerCorrect = true;
+  }
+
+  clickQuestion(){
+    this.questionExpanded = !this.questionExpanded;
   }
 
   clickClue() {

@@ -1,6 +1,24 @@
-<div class="main">
+<div class="login" *ngIf="idValid === false">
+  <h1>Please Enter Your Identification Code</h1>
 
-  <app-question *ngFor="let result of array;" [clue]="result.clue" [number]="result.number" [answer]="result.answer">
-  </app-question>
+  <div class="input-grid">
+    <div class="input-container">
+      <input class="idCodeInput" type="text" maxlength="10" #idCodeInput>
+      <button class="idCheck" (click)="checkId(idCodeInput.value)" type="submit">Enter</button>
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="idValid === true">
+
+  <h1>
+    Welcome {{userName}}!
+  </h1>
+
+  <div class="main">
+    <app-question *ngFor="let result of array;" [clue]="result.clue" [number]="result.number" [answer]="result.answer">
+    </app-question>
+  </div>
 
 </div>

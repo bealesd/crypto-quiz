@@ -1,3 +1,72 @@
+/*large screen*/
+:host{
+    --font-family: 'Space Mono';
+    --question-container-width: 700px;
+}
+
+/*medium size wrapper*/
+@media screen and (max-width: 900px) and (min-width: 700px) {
+    :host {
+        --question-container-width: 600px;
+   }
+}
+
+/*small size wrapper*/
+@media screen and (max-width: 700px) {
+    :host {
+       --question-container-width: 400px;
+
+   }
+}
+
+.input-grid{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.input-container{
+    grid-column: 2;
+}
+
+.idCodeInput{
+    width: 150px;
+    font-family: var(--font-family);
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+button {
+    color: white;
+    padding: 2px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: var(--font-family);
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #1fb123;
+    border: 1px solid darkgreen;
+}
+
+button:hover {
+    background-color: darkgreen;
+    border: 1px solid #1fb123;
+}
+
+
+h1{
+    color: white;
+    text-align: center;
+    font-family: var(--font-family);
+    width: 100vw;
+}
+
 .main{
+    display: grid;
+    grid-template-columns: calc((100vw - var(--question-container-width))/2) var(--question-container-width) calc((100vw - var(--question-container-width))/2);
+}
+
+app-question{
+    grid-column: 2;
     color:white;
 }
