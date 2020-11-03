@@ -11,10 +11,11 @@ export class QuestionComponent implements OnInit {
   @Input() number: number;
   @Input() answer: number;
 
-  questionExpanded: boolean = false;
+  questionExpanded = false;
   isAnswerCorrect: boolean | null = null;
-  clueClicked: boolean = false;
-  checkAnswerExapnded: boolean = false;
+  clueClicked = false;
+  checkAnswerExapnded = false;
+  imageFront = true;
 
   constructor() { }
 
@@ -26,13 +27,11 @@ export class QuestionComponent implements OnInit {
       (<any>document.querySelector('.answerInput')).value = '';
     }
 
-    else if (parseInt(value) !== this.answer)
-      this.isAnswerCorrect = false;
-    else
-      this.isAnswerCorrect = true;
+    else if (parseInt(value) !== this.answer) this.isAnswerCorrect = false;
+    else this.isAnswerCorrect = true;
   }
 
-  clickQuestion(){
+  clickQuestion() {
     this.questionExpanded = !this.questionExpanded;
   }
 
@@ -42,6 +41,12 @@ export class QuestionComponent implements OnInit {
 
   togglecheckAnswerExapnsion() {
     this.checkAnswerExapnded = !this.checkAnswerExapnded;
+  }
+
+  imageChangeClick(value){
+    if(value === 'front') this.imageFront = true;
+    else if(value === 'back') this.imageFront = false;
+    else this.imageFront = !this.imageFront ;
   }
 
 }

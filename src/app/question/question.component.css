@@ -9,6 +9,12 @@
     width: calc(var(--question-container-width));
 }
 
+.imageChange{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
 img{ 
     max-width:100%;
     max-height:100%;

@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   userName: string;
   idValid: boolean = false;
+
   title = 'crypto-quiz';
   uuid = '08a034f7-6e13-49eb-857e-5442367a2429';
   validIds = {
@@ -17,12 +18,12 @@ export class AppComponent {
   array = [
     {
       number: 1,
-      clue: 'Count the sides',
+      clue: 'Count the sides.',
       answer: 4
     },
     {
       number: 2,
-      clue: 'Count all the balls, including those you can\'t see',
+      clue: 'Count all the balls, including those you can\'t see.',
       answer: 30
     },
     {
@@ -32,43 +33,43 @@ export class AppComponent {
     },
     {
       number: 4,
-      clue: 'Count the sides',
-      answer: 4
+      clue: 'There are squares within squares, and they can overlap.',
+      answer: 50
     },
     {
       number: 5,
-      clue: 'Count the sides',
-      answer: 4
+      clue: 'The answer has nothing to do with the answers from questions 1-4.',
+      answer: 3
     },
     {
       number: 6,
-      clue: 'Count the sides',
+      clue: 'Look for what\'s left.',
       answer: 4
     },
     {
       number: 7,
-      clue: 'Count the sides',
-      answer: 4
+      clue: 'It takes one staff member three minutes to serve one person',
+      answer: 3
     },
     {
       number: 8,
-      clue: 'Count the sides',
-      answer: 4
+      clue: 'It is not on any man-made structures.',
+      answer: 2
     },
     {
       number: 9,
-      clue: 'Count the sides',
-      answer: 4
+      clue: 'The answer is at your fingertips??',
+      answer: 7
     },
     {
       number: 10,
-      clue: 'Count the sides',
+      clue: 'Think outside the box, literally',
       answer: 4
     },
     {
       number: 11,
-      clue: 'Count the sides',
-      answer: 4
+      clue: 'Look at the frequency of the letters (frequency analysis). You should be able to get \'F\'.',
+      answer: 5
     }
   ];
 

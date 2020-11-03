@@ -4,7 +4,11 @@
 
 <div class="questionContainer" *ngIf="questionExpanded">
 
-  <img src="assets/images/puzzle-{{number}}.jpg" title="which shape is next">
+  <button class="imageChange" (click)="imageChangeClick('front')">Front</button>
+  <button class="imageChange" (click)="imageChangeClick('back')">Back</button>
+
+  <img *ngIf="imageFront" src="assets/images/puzzle-{{number}}-front.jpg">
+  <img *ngIf="!imageFront" src="assets/images/puzzle-{{number}}-back.jpg" >
 
   <div class="clue" (click)="clickClue()">CLUE</div>
   <div class="clueValue" *ngIf="clueClicked">{{clue}}</div>

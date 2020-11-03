@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "crypto-quiz"
+  "defaultProject": "crypto-quiz",
+  "cli": {
+    "analytics": false
+  }
 }
