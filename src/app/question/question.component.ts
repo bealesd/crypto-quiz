@@ -17,22 +17,47 @@ export class QuestionComponent implements OnInit {
   checkAnswerExapnded = false;
   imageFront = true;
 
+  userAnswer = '';
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.getUserAnswer();
+  }
+
+  getUserAnswer() {
+    const userAnswer = window.localStorage.getItem(`question-${this.number}`);
+    if (userAnswer === null || userAnswer === undefined)
+      this.userAnswer = '';
+    else
+      this.userAnswer = userAnswer;
+  }
+
+  setUserAnswer(value: string) {
+    if (!isNaN(<any>(value))) {
+      window.localStorage.setItem(`question-${this.number}`, `${value}`);
+    }
+  }
 
   checkAnswer(value: string) {
     if (isNaN(<any>(value))) {
       alert('Not a Number!');
       (<any>document.querySelector('.answerInput')).value = '';
+      return;
     }
+    else if (parseInt(value) !== this.answer)
+      this.isAnswerCorrect = false;
+    else
+      this.isAnswerCorrect = true;
 
-    else if (parseInt(value) !== this.answer) this.isAnswerCorrect = false;
-    else this.isAnswerCorrect = true;
+    this.setUserAnswer(value);
+    this.userAnswer = `${value}`;
   }
 
   clickQuestion() {
+    this.getUserAnswer();
     this.questionExpanded = !this.questionExpanded;
+
   }
 
   clickClue() {
@@ -43,10 +68,10 @@ export class QuestionComponent implements OnInit {
     this.checkAnswerExapnded = !this.checkAnswerExapnded;
   }
 
-  imageChangeClick(value){
-    if(value === 'front') this.imageFront = true;
-    else if(value === 'back') this.imageFront = false;
-    else this.imageFront = !this.imageFront ;
+  imageChangeClick(value) {
+    if (value === 'front') this.imageFront = true;
+    else if (value === 'back') this.imageFront = false;
+    else this.imageFront = !this.imageFront;
   }
 
 }

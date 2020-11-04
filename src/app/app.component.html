@@ -22,17 +22,42 @@
 
   <div class="main" *ngIf="route === 'questions'">
 
-    <app-question *ngFor="let question of questions;" [clue]="question.clue" [number]="question.number" [answer]="question.answer">
+    <app-question *ngFor="let question of questions;" [clue]="question.clue" [number]="question.number"
+      [answer]="question.answer">
     </app-question>
 
-    <div class="envelopeLink medium-text" (click)="openEnvelope()">
-      Back to Envelope
+    <div class="medium-text passcode-generator">
+      <button (click)="getPasscode()">
+        Generate Passcode
+      </button>
+    </div>
+
+    <div class="medium-text passcode-generator">
+      <button class="red" (click)="clearAnswers()">
+        Clear Answers
+      </button>
+    </div>
+
+    <div class="envelopeLink medium-text">
+      <span class="underline" (click)="openEnvelopeAndWarnUser()">
+        Back to Envelope
+      </span>
     </div>
 
   </div>
 
+
   <div class="main" *ngIf="route === 'passcode'">
+
     <app-pass-code [username]="userName" [passcode]="passcode"></app-pass-code>
+
+    <div class="envelopeLink medium-text">
+      <span class="underline" (click)="openEnvelope()">
+        Back to Envelope
+      </span>
+    </div>
+
   </div>
 
+  
 </div>

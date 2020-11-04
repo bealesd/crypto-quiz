@@ -47,6 +47,16 @@ button {
     border: 1px solid darkgreen;
 }
 
+.red{
+    background-color: red;
+    border: 1px solid darkred; 
+}
+
+.red:hover{
+    background-color: darkred;
+    border: 1px solid red;
+}
+
 button:focus {
     cursor: not-allowed;
     outline: none;
@@ -91,14 +101,25 @@ app-envelope{
     margin-bottom: 20px;
 }
 
-.envelopeLink{
-    margin-top: 40px;
+.passcode-generator{
+    margin-top: 20px;
     grid-column: 2;
 }
 
-.envelopeLink:hover{
-    text-decoration: underline;
+.underline{
+    transition: 1000ms;
+    border-bottom: 1px solid transparent;
+}
+
+.underline:hover{
+    color:white;
     cursor: pointer;
+    border-bottom: 1px solid white;
+}
+
+.envelopeLink{
+    margin-top: 40px;
+    grid-column: 2;
 }
 
 .input-grid{

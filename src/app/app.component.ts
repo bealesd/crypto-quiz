@@ -83,7 +83,7 @@ export class AppComponent {
 
   constructor(subject: SubjectHelper) {
     this.subject = subject;
-   }
+  }
 
   ngOnInit() {
     this.subject.route.subscribe(route => {
@@ -108,8 +108,28 @@ export class AppComponent {
       alert('Invalid id.');
   }
 
-  openEnvelope(){
+  openEnvelope() {
     this.subject.route.next('envelope');
   }
 
+  openEnvelopeAndWarnUser() {
+    if (window.confirm('Do you want to leave page, unchecked answers won\'t be saved?'))
+      this.openEnvelope();
+  }
+
+  getPasscode() {
+    const passcode = this.questions.map(question => question.number).map(questionNumber =>
+      window.localStorage.getItem(`question-${questionNumber}`)).join('');
+    if (passcode.length < 11)
+      alert('You haven\'t answered all the questions!')
+    else
+      alert(`Passcode is: ${passcode}.`);
+  }
+
+  clearAnswers() {
+    if (window.confirm('Are you sure you want to delete your answers?')) {
+      this.questions.map(question => question.number).map(questionNumber =>
+        window.localStorage.removeItem(`question-${questionNumber}`));
+    }
+  }
 }
