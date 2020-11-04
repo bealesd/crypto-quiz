@@ -1,6 +1,5 @@
 /*large screen*/
 :host{
-    --font-family: 'Space Mono';
     --question-container-width: 700px;
 }
 
@@ -48,17 +47,27 @@ button {
     border: 1px solid darkgreen;
 }
 
+button:focus {
+    cursor: not-allowed;
+    outline: none;
+}
+
 button:hover {
     background-color: darkgreen;
     border: 1px solid #1fb123;
 }
 
-
-h1{
+.large-text, .medium-text{
     color: white;
     text-align: center;
     font-family: var(--font-family);
-    width: 100vw;
+}
+
+.large-text{
+    font-size: 30px; 
+}
+.medium-text{
+    font-size: 20px;
 }
 
 .main{
@@ -66,7 +75,36 @@ h1{
     grid-template-columns: calc((100vw - var(--question-container-width))/2) var(--question-container-width) calc((100vw - var(--question-container-width))/2);
 }
 
-app-question{
+app-question, app-pass-code{
     grid-column: 2;
     color:white;
+}
+
+app-envelope{
+    margin-top: 50px;
+    grid-column: 2;
+    color:black;
+}
+
+.heading{
+    grid-column: 2;
+    margin-bottom: 20px;
+}
+
+.envelopeLink{
+    margin-top: 40px;
+    grid-column: 2;
+}
+
+.envelopeLink:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.input-grid{
+    margin-top: 20px;
+}
+
+.login{
+    margin-top:10px;
 }

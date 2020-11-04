@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
+import { EnvelopeComponent } from './envelope/envelope.component';
+import { PassCodeComponent } from './pass-code/pass-code.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionComponent
+    QuestionComponent,
+    EnvelopeComponent,
+    PassCodeComponent
   ],
   imports: [
     BrowserModule

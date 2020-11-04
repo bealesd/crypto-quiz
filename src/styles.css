@@ -1,5 +1,10 @@
+:root{
+    --body-background-color: rgba(20, 20, 20, 1);
+    --font-family: 'Space Mono';
+}
+
 body{
-    background-Color: rgba(20, 20, 20, 1);
+    background-Color: var(--body-background-color);
     margin: 0px;
     padding: 0px;
     border: none;

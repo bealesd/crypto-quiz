@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="envelope"></div>
+  <div class="flip {{letterOpen ? 'open' : 'close' }}"></div>
+
+  <div class="letter {{letterOpen ? 'letterOpen' : 'letterClose' }}" [style.zIndex]="letterZedIndex">
+    <div class="text">
+      Someone has sent you a message.
+      <br /><br />
+      It is locked away <div class="link" (click)="openPassCode()">here</div>, but you need a passcode to unlock it.
+      <br /><br />
+      In this envelope are <div class="link" (click)="openQuestions()">11 questions</div>. Solve them and you will have
+      the passcode.
+      <br /><br />
+      Good luck!
+    </div>
+  </div>
+
+  <div class=seal (click)="sealClick()">
+    <img src="assets/images/seal.png">
+  </div>
+
+  <div class="button-container">
+    <button id="open" (click)="open()">Open</button>
+    <button id="close" (click)="close()">Close</button>
+  </div>
+
+</div>

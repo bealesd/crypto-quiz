@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SubjectHelper } from './subject-helper';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  subject: SubjectHelper;
+  route: string;
+
   userName: string;
   idValid: boolean = false;
 
@@ -15,7 +19,9 @@ export class AppComponent {
     'U2FsdGVkX1+3BwUvnwdcApe+Cz28FrHKXTPyxlBVvrQ=': 'Bill Beales',
     'U2FsdGVkX19lH/iaRfkPf51IvVYsFKUXzkyPZcj37Do=': 'Alan Sully'
   };
-  array = [
+
+
+  questions = [
     {
       number: 1,
       clue: 'Count the sides.',
@@ -73,7 +79,17 @@ export class AppComponent {
     }
   ];
 
-  constructor() { }
+  passcode = parseInt(this.questions.map(question => question.answer).join(''));
+
+  constructor(subject: SubjectHelper) {
+    this.subject = subject;
+   }
+
+  ngOnInit() {
+    this.subject.route.subscribe(route => {
+      this.route = route;
+    });
+  }
 
   createKey(password: string) {
     return (<any>window).CryptoJS.AES.encrypt(password, this.uuid).toString();
@@ -90,6 +106,10 @@ export class AppComponent {
 
     if (this.idValid === false)
       alert('Invalid id.');
+  }
+
+  openEnvelope(){
+    this.subject.route.next('envelope');
   }
 
 }

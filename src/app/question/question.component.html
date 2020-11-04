@@ -1,19 +1,26 @@
 <div class="questionNumber" (click)="clickQuestion()">
-  PUZZLE {{number}}
+  <span class="underline">PUZZLE {{number}}</span>
 </div>
 
 <div class="questionContainer" *ngIf="questionExpanded">
+  
+  <div class="button-container">
+    <button class="imageChange" (click)="imageChangeClick('front')">Front</button>
+    <button class="imageChange" (click)="imageChangeClick('back')">Back</button>
+  </div>
 
-  <button class="imageChange" (click)="imageChangeClick('front')">Front</button>
-  <button class="imageChange" (click)="imageChangeClick('back')">Back</button>
 
-  <img *ngIf="imageFront" src="assets/images/puzzle-{{number}}-front.jpg">
-  <img *ngIf="!imageFront" src="assets/images/puzzle-{{number}}-back.jpg" >
+  <img *ngIf="imageFront" src="https://raw.githubusercontent.com/bealesd/crypto-quiz/main/src/assets/images/puzzle-{{number}}-front.jpg">
+  <img *ngIf="!imageFront" src="https://raw.githubusercontent.com/bealesd/crypto-quiz/main/src/assets/images/puzzle-{{number}}-back.jpg">
 
-  <div class="clue" (click)="clickClue()">CLUE</div>
+  <div class="clue" (click)="clickClue()">
+    <span class="underline">CLUE</span>
+  </div>
   <div class="clueValue" *ngIf="clueClicked">{{clue}}</div>
 
-  <div class="checkAnswer" (click)="togglecheckAnswerExapnsion()">ANSWER</div>
+  <div class="checkAnswer" (click)="togglecheckAnswerExapnsion()">
+    <span class="underline">ANSWER</span>
+  </div>
 
   <div *ngIf="checkAnswerExapnded">
     <input class="answerInput" type="text" pattern="\d*" maxlength="2" #numberInput>

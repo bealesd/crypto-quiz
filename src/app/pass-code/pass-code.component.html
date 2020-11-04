@@ -1,0 +1,33 @@
+<div class="passcode-container">
+
+  <div class="sub-heading">
+    Passcode Control
+  </div>
+
+
+  <input class="answerInput" type="text" pattern="\d*" maxlength="30" #numberInput>
+  <button class="answerCheck" (click)="checkAnswer(numberInput.value)" type="submit">Enter</button>
+
+  <div class="answerResult" *ngIf="isPasscodeCorrect === false">Wrong Passcode!</div>
+
+</div>
+
+<div class="passcode-container" *ngIf="isPasscodeCorrect === true">
+
+  <div id="" class="sub-heading" *ngIf="unlocking === true">
+    Message unlocking{{dots}}
+  </div>
+
+  <div *ngIf="unlocking === false">
+    <div class="sub-heading margin">
+      {{'Congratulations, you solved the Cryptogram!' | uppercase}}
+    </div>
+
+    <img src="https://raw.githubusercontent.com/bealesd/crypto-quiz/main/src/assets/images/{{imageName}}.jpg">
+
+    <div class="message">
+      {{message}}
+    </div>
+  </div>
+
+</div>

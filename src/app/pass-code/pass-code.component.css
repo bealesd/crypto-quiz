@@ -1,58 +1,19 @@
-.questionNumber {
-    font-size: 20px;
-    font-family: var(--font-family);
-    margin-top: 20px;
-    width: var(--question-container-width);
-    transition: 1000ms;
-}
-
-.underline{
-    transition: 1000ms;
-    border-bottom: 1px solid transparent;
-}
-
-.underline:hover{
-    color:white;
-    cursor: pointer;
-    border-bottom: 1px solid white;
-}
-
-
-.questionContainer {
+.passcode-container {
     width: calc(var(--question-container-width));
+    font-size: 20px;
+    font-family: var(--font-family);
+    margin-top: 10px;
 }
 
-.imageChange {
-    margin-right: 10px;
+.sub-heading {
+    font-size: 20px;
+    font-family: var(--font-family);
+    margin-top: 10px;
     margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.clue {
-    font-size: 20px;
-    font-family: var(--font-family);
-    margin-top: 10px;
-}
-
-.clueValue {
-    font-size: 18px;
-    font-family: var(--font-family);
-    margin-top: 5px;
-}
-
-.checkAnswer {
-    font-size: 20px;
-    font-family: var(--font-family);
-    margin-top: 10px;
 }
 
 .answerInput {
-    width: 50px;
+    width: 200px;
     font-family: var(--font-family);
     font-size: 20px;
     margin-top: 10px;
@@ -65,12 +26,6 @@ img {
 .answerResult {
     display: inline;
     margin-left: 10px;
-}
-
-.button-container {
-    margin-top: var(--envelope-height);
-    margin-left: 0px;
-    width: 100%
 }
 
 button {
@@ -89,4 +44,25 @@ button {
 button:hover {
     background-color: darkgreen;
     border: 1px solid #1fb123;
+}
+
+button:focus {
+    outline: none;
+}
+
+.message{
+    font-family: var(--font-family);
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: calc(var(--question-container-width));
+}
+
+.margin{
+    margin-top: 30px;
 }

@@ -1,5 +1,5 @@
 <div class="login" *ngIf="idValid === false">
-  <h1>Please Enter Your Identification Code</h1>
+  <div class="large-text">Please Enter Your Identification Code</div>
 
   <div class="input-grid">
     <div class="input-container">
@@ -12,13 +12,27 @@
 
 <div *ngIf="idValid === true">
 
-  <h1>
+  <div class="large-text heading">
     Welcome {{userName}}!
-  </h1>
+  </div>
 
-  <div class="main">
-    <app-question *ngFor="let result of array;" [clue]="result.clue" [number]="result.number" [answer]="result.answer">
+  <div class="main" *ngIf="route === 'envelope'">
+    <app-envelope></app-envelope>
+  </div>
+
+  <div class="main" *ngIf="route === 'questions'">
+
+    <app-question *ngFor="let question of questions;" [clue]="question.clue" [number]="question.number" [answer]="question.answer">
     </app-question>
+
+    <div class="envelopeLink medium-text" (click)="openEnvelope()">
+      Back to Envelope
+    </div>
+
+  </div>
+
+  <div class="main" *ngIf="route === 'passcode'">
+    <app-pass-code [username]="userName" [passcode]="passcode"></app-pass-code>
   </div>
 
 </div>
