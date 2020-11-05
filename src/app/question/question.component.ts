@@ -37,6 +37,9 @@ export class QuestionComponent implements OnInit {
     if (!isNaN(<any>(value))) {
       window.localStorage.setItem(`question-${this.number}`, `${value}`);
     }
+    else{
+      (<any>document.querySelector('.answerInput')).value = '';
+    }
   }
 
   checkAnswer(value: string) {
