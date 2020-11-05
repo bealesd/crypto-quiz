@@ -3,7 +3,7 @@
 </div>
 
 <div class="questionContainer" *ngIf="questionExpanded">
-  
+
   <div class="button-container">
     <button class="imageChange" (click)="imageChangeClick('front')">Front</button>
     <button class="imageChange" (click)="imageChangeClick('back')">Back</button>
@@ -23,7 +23,7 @@
   </div>
 
   <div *ngIf="checkAnswerExapnded">
-    <input class="answerInput" type="text" pattern="\d*" maxlength="2" #numberInput  [value]="userAnswer">
+    <input class="answerInput" type="text" pattern="\d*" maxlength="2" #numberInput  [value]="userAnswer" (change)="setUserAnswer(numberInput.value)">
     <button class="answerCheck" (click)="checkAnswer(numberInput.value)" type="submit">Check</button>
 
     <div class="answerResult" *ngIf="isAnswerCorrect === true">Well done!</div>
